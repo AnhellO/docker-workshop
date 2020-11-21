@@ -6,6 +6,6 @@ El workshop consta de 8 sesiones de 2 horas c/u en donde se busca iniciar con lo
 
 Puedes encontrar el contenido visto en cada una de las sesiones en la carpeta de [`sesiones`](sesiones/).
 
-Las guías y los ejemplos vistos durante las sesiones pueden encontrarse en la carpeta de [`ejemplos`](ejemplos/).
+Las guías y los ejemplos vistos durante las sesiones pueden encontrarse en la carpeta de [`laboratorios`](laboratorios/).
 
-Finalmente, puedes encontrar un concentrado de varios recursos útiles como links, artículos, tutoriales y libros en el archivo markdown de [`RECURSOS`](RECURSOS.md), de tal manera que complementes y potencies lo visto en el workshop.
+Finalmente, puedes encontrar un concentrado de varios recursos útiles como links, artículos, tutoriales y libros en la carpeta de [`recursos/`](recursos/), de tal manera que complementes y potencies lo visto en el workshop.
