@@ -31,7 +31,7 @@ print(db.pet.insert_many([
     {
         "name": "solovino",
         "owner": "jorge",
-        "specie": "perro"
+        "specie": "cuyo"
     },
 ]))
 

@@ -1,6 +1,6 @@
 # Guía
 
-Esta guía parte del ejemplo 1 de Docker, pero ahora añadiendo la lógica para volúmenes.
+Esta guía parte del [`laboratorio-1`](../laboratorio-1/) de Docker, pero ahora añadiendo la lógica para volúmenes.
 
 1. Crea un par de volumenes para `MySQL` y para `PHPMyAdmin` respectivamente por medio de los siguientes comandos `docker volume create mysql-volume` y `docker volume create phpmyadmin-volume`
 2. Vuelve a crear los contenedores de `MySQL` y de `PHPMyAdmin` con los mismos comandos utilizados anteriormente, pero ahora añadiendo la opción `-v` a cada comando de `docker run`, asociándolo a su respectivo volumen. Los comandos quedarían de la siguiente manera:
