@@ -1,6 +1,6 @@
 # Guía
 
-Esta guía pretende dar una breve introducción al concepto de "docker networks".
+Esta guía pretende dar una breve introducción al concepto de "_docker networks_".
 
 1. Docker se encarga de los aspectos de red para que los contenedores puedan comunicarse con otros contenedores y también con el Docker Host. Los contenedores podrán comunicarse con cada uno de los hosts y su configuración de red puede ser altamente personalizable gracias a las Docker networks. Este networking también se puede integrar con "orquestadores" como Docker Compose y Docker Swarm.
 2. Puedes ver las redes de Docker disponibles con el comando `docker network ls`

@@ -1,6 +1,6 @@
 # Recursos
 
-Markdown que concentra varios recursos interesantes sobre Docker y Docker Compose, en inglés y español. La intención es que este material de apoyo facilite y expanda el workshop de Docker. Se requiere esfuerzo extra curricular de los participantes para continuar estudiando con este material.
+Documento que concentra varios recursos interesantes sobre `Docker` y `Docker Compose`, en inglés y en español. La intención es que este material de apoyo facilite y expanda el workshop de `Docker`. Se requiere un esfuerzo extra curricular de los participantes para continuar estudiando con este material.
 
 ## Documentación
 

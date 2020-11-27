@@ -1,6 +1,6 @@
 # Guía
 
-Esta guía pretende mostrar un ejemplo sencillo de docker networks pero ahora conectando dos contenedores.
+Esta guía pretende mostrar un ejemplo sencillo de `docker networks` pero ahora conectando dos contenedores.
 
 1. Crea una nueva network utilizando el comando `docker network create app`
    1. Una vez creada puedes verificar esta network con `docker network inspect app`
