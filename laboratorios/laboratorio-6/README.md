@@ -14,8 +14,8 @@ Esta guía pretende mostrar un ejemplo sencillo de `docker networks` pero ahora 
 
 ## Recursos
 
-* <https://redis.io/>
-* <https://hub.docker.com/_/redis>
-* <https://hub.docker.com/_/python>
-* <https://faker.readthedocs.io/en/master/>
-* <https://pypi.org/project/redis/>
+- <https://redis.io/>
+- <https://hub.docker.com/_/redis>
+- <https://hub.docker.com/_/python>
+- <https://faker.readthedocs.io/en/master/>
+- <https://pypi.org/project/redis/>

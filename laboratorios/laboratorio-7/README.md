@@ -35,5 +35,5 @@ Esta guía parte del [`laboratorio-6`](../laboratorio-6/), pero ahora utilizando
 
 ## Recursos
 
-* <https://yaml.org/>
-* <https://docs.docker.com/compose/>
+- <https://yaml.org/>
+- <https://docs.docker.com/compose/>
