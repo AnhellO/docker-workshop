@@ -18,3 +18,4 @@ Esta guía parte del [`laboratorio-1`](../laboratorio-1/) de Docker, pero ahora 
 
 * <https://docs.docker.com/storage/volumes/>
 * <https://docs.docker.com/storage/bind-mounts/>
+* <https://docs.docker.com/storage/tmpfs/>
