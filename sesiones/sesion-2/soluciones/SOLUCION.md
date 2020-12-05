@@ -1,7 +1,7 @@
 # Guía de Solución
 
-1. Mongo: `docker run -d -p 27017:27017 --name m1 mongo`
-2. PHPMoAdmin: `docker run --name moadmin -d --link m1:db -p 8080:80 thinkcube/phpmoadmin`
+1. Mongo: `docker run -d -p 27017:27017 --name db --hostname db --network tarea-sesion-2 mongo`
+2. PHPMoAdmin: `docker run --name moadmin --network tarea-sesion-2 -d -p 8080:80 thinkcube/phpmoadmin`
 3. Creamos el `Dockerfile`
    1. Versión en [`Python`](python/Dockerfile)
    2. Versión en [`GO`](go/Dockerfile)

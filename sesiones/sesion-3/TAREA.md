@@ -4,7 +4,7 @@ Ejercicios propuestos para practicar lo visto en la 3er sesión.
 
 ## Ejercicio 1
 
-- Completar ejercicio 1 del capítulo 5 del libro `The Docker Book` (`Using Docker to test a static website.`)
+- Completar ejercicio 1 del capítulo 5 del libro `The Docker Book`: `Using Docker to test a static website.`
 
 ## Ejercicio 2
 
