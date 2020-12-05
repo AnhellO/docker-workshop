@@ -8,6 +8,10 @@ Ejercicios propuestos para practicar lo visto en la 3er sesión.
 
 ## Ejercicio 2
 
+- Lleva a cabo la guía propuesta en el [laboratorio 7](../../laboratorios/laboratorio-7/README.md)
+
+## Ejercicio 3
+
 Crea 2 contenedores por medio del cliente `CLI` de `docker`:
 
 - El **1er contenedor** ejecutará un servidor de [`Redis`](https://hub.docker.com/_/redis) y su nombre deberá de ser `redis`
