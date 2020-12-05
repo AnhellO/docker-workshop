@@ -11,4 +11,4 @@ Esta guía pretende dar una breve introducción al concepto de "_docker networks
 
 ## Recursos
 
-* <https://docs.docker.com/network/>
+- <https://docs.docker.com/network/>
