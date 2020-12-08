@@ -1,21 +1,21 @@
 # Guía
 
-Esta guía pretende mostrar un ejemplo sencillo de `docker networks` pero ahora conectando dos contenedores.
+Esta guía parte de la solución de la tarea propuesta en la 2da sesión, pero utiliza el concepto de `docker networks` para comunicar los contenedores entre si.
 
-1. Crea una nueva network utilizando el comando `docker network create app`
-   1. Una vez creada puedes verificar esta network con `docker network inspect app`
-2. Crea un contenedor que ejecute Redis utilizando el comando `docker run -d -p 6379:6379 --network=app --name redis redis --protected-mode no`
-   1. Vuelve a utilizar el comando `docker network inspect app`, ¿puedes ver como nuestro contenedor de Redis está conectado a nuestra red de `app`?
-3. Clona el repositorio de `https://github.com/AnhellO/redispy`
-4. Construye la imágen de Python de la carpeta de `./app` con el comando `docker build -t miusario/redispy .`, donde `miusuario = tu usuario de docker-hub`
-5. Ahora procederemos a instanciar un contenedor nuevo con la imágen que creamos anteriormente utilizando el comando `docker run -d --network=app --name redispy miusuario/redispy`
-6. El nuevo container de Python debe de haber ejecutado el script correctamente. Para verificar esto puedes revisar los logs del contenedor con `docker logs redispy`. Deberías de ser capaz de ver los `print()` statements del script de `./app/app.py`, y entre en ellos algunos "fake emails" que se crearon gracias al paquete `faker` instalado dentro del contenedor de Python
-7. Si quieres dar un paso más allá y verificar que los cambios se guardaron en tu contenedor de Redis, entonces puedes instalar el [cliente CLI de redis](https://redis.io/topics/rediscli) en tu máquina local, y conectarte a tu instancia de Redis por medio de `redis-cli -h 0.0.0.0 -p 6379`. Ya dentro prueba a jugar con algunos comandos como `KEYS *` y luego `GET algun-hash-key` utilizando alguno de los hash values que salieron en el primer comando como parámetro, en vez de `algun-hash-key`
+También cambiaremos de utilizar el cliente de [`PHPMoAdmin`](https://hub.docker.com/r/thinkcube/phpmoadmin) a utilizar el de [`Mongo-Express`](https://hub.docker.com/_/mongo-express).
+
+Vamos a partir de la solución propuesta, pero aplicando algunos cambios menores.
+
+- Comenzamos por crear una network custom con el comando `docker network create lab6`
+- Vamos a ejecutar el contenedor de `MongoDB`, pero ahora montándolo sobre nuestra nueva red: `docker run -d -p 27017:27017 --name m1 --network lab6 mongo`
+- Procedemos a ejecutar el contenedor de `Mongo Express` con el siguiente comando: `docker run -d --name moexpress --network lab6 -e ME_CONFIG_MONGODB_SERVER=m1 -e ME_CONFIG_BASICAUTH_USERNAME=admin -e ME_CONFIG_BASICAUTH_PASSWORD=karlitabb -p 8081:8081 mongo-express`
+  - Puedes visitar el cliente DBMS en la URL <http://0.0.0.0:8081/>
+- Después de tener nuestros dos contenedores iniciales de `Mongo` y del cliente de `Mongo Express` en ejecución, vamos a construir una imagen taggeada específicamente para este laboratorio con la cual ejecutaremos la solución propuesta en `GO` para que se conecté con el contenedor de mongo, pero ahora por medio de la docker network custom que hemos creado
+  - Construimos la imagen con el comando `docker build -t lab6 .`
+  - Instanciamos un contenedor de la imagen construída previamente con el comando `docker run -d --network lab6 --name mongogo lab6`
+  - Visita el cliente de `Mongo Express` para poder ver los cambios reflejados
 
 ## Recursos
 
-* <https://redis.io/>
-* <https://hub.docker.com/_/redis>
-* <https://hub.docker.com/_/python>
-* <https://faker.readthedocs.io/en/master/>
-* <https://pypi.org/project/redis/>
+- <https://docs.docker.com/network/>
+- <https://hub.docker.com/_/mongo-express>

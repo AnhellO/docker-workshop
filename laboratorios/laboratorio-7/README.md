@@ -1,39 +1,23 @@
 # Guía
 
-Esta guía parte del [`laboratorio-6`](../laboratorio-6/), pero ahora utilizando `Docker Compose`.
+Esta guía pretende mostrar un ejemplo sencillo de `docker networks` pero ahora conectando dos contenedores.
 
-1. Mismo paso, clona el repositorio de `https://github.com/AnhellO/redispy`
-2. En esta ocasión haremos uso del archivo `docker-compose.yml` que se encuentra en el mismo directorio, pero ejecutando un nuevo comando: `docker-compose up`
-   1. ¿Te das cuenta como con un solo comando, ahora levantamos toda una aplicación (imágenes, network, contenedores)?. Esto es [orquestación de contenedores](https://www.campusmvp.es/recursos/post/las-10-herramientas-mas-importantes-para-orquestacion-de-contenedores-docker.aspx)
-   2. Puedes ver tus contenedores utilizando `docker ps -a`. En esta ocasión vale la pena que revises los nombres de los mismos, ¿puedes ver como están basados en nuestra configuración del archivo `docker-compose.yml`?
-   3. Sigue los pasos 5 y 6 del `laboratorio-6` en caso de que quieras revisar que los contenedores están funcionando correctamente
-3. Ahora procederemos a hacer un cambio en nuestro archivo `app.py`. Cambiemos nuestra lista comprimida de `for i in range(0, 100)` a `for i in range(0, 500)`, y seguido de esto reiniciemos nuestro contenedor de `redispy_app` con `docker restart redispy_app`. ¿Puedes ver cómo ahora insertamos 500 nuevos valores en Redis, pero no tuvimos que recrear imágenes ni contenedores?. Esto es gracias a los [volume-bind-mounts](https://docs.docker.com/storage/bind-mounts/) de Docker :wink:
-4. Procedamos a jugar un poco con nuestro archivo `docker-compose.yml`
-   1. Detén tu app de docker compose actual utilizando `Ctrl+C`, y después utiliza el comando `docker-compose down` para detener y remover los contenedores y la network. ¿Viste cómo un solo comando volvió a "orquestar" todo este proceso?
-   2. Dentro de la carpeta del repositorio clonado, crea una nueva carpeta llamada `/redis`, y dentro de esa nueva carpeta incluye el [`Dockerfile` que se encuentra en este mismo directorio](Dockerfile)
-   3. Cambia las siguientes líneas en el archivo `docker-compose.yml`:
-   ``` yml
-   redis:
-    image: redis:latest
-    container_name: redispy_redis
-    ports:
-      - 6379:6379
-    command: ["redis-server"]
-   ```
-   por estas otras (¡asegúrate de borrar la línea de `command`!):
-   ``` yml
-   redis:
-    build: ./redis
-    container_name: redispy_redis
-    ports:
-      - 6379:6379
-   ```
-   1. Guarda los cambios y vuelve a ejecutar tu comando de `docker-compose up`, pero ahora agregando el parámetro `--build` (que reconstruirá las imágenes de docker) y el parámetro `-d` (que ejecutará los contenedores en el "background")
-      1. OJO: En caso de que esto no funcione, prueba deteniendo la app, borrando tus imágenes anteriores de redis con `docker rmi redispy_app redispy_redis`, y volviendo a ejecutar el comando `docker-compose up --build -d`
-      2. ¿Puedes ver como ahora construimos nuestra propia imágen de Redis a nuestra medida, y la "orquestamos" dentro de nuestro archivo de configuración del `docker-compose.yml` file?
-      3. ¡Siéntete libre de seguir jugando con el archivo YAML y agregar/quitar lo que tú quieras!
+1. Crea una nueva network utilizando el comando `docker network create app`
+   1. Una vez creada puedes verificar esta network con `docker network inspect app`
+2. Crea un contenedor que ejecute Redis utilizando el comando `docker run -d -p 6379:6379 --network=app --name redis redis --protected-mode no`
+   1. Vuelve a utilizar el comando `docker network inspect app`, ¿puedes ver como nuestro contenedor de Redis está conectado a nuestra red de `app`?
+3. Clona el repositorio de <https://github.com/AnhellO/redispy>
+4. Construye la imágen de Python de la carpeta de `./app` con el comando `docker build -t miusario/redispy .`, donde `miusuario = tu usuario de docker-hub`
+5. Ahora procederemos a instanciar un contenedor nuevo con la imágen que creamos anteriormente utilizando el comando `docker run -d --network app --name redispy miusuario/redispy`
+6. El nuevo container de Python debe de haber ejecutado el script correctamente. Para verificar esto puedes revisar los logs del contenedor con `docker logs redispy`. Deberías de ser capaz de ver los `print()` statements del script de `./app/app.py`, y entre en ellos algunos "fake emails" que se crearon gracias al paquete `faker` instalado dentro del contenedor de Python
+7. Si quieres dar un paso más allá y verificar que los cambios se guardaron en tu contenedor de Redis, entonces puedes llevar a cabo alguno de los siguientes pasos:
+   1. Instalar el [cliente CLI de redis](https://redis.io/topics/rediscli) en tu máquina local, y conectarte a tu instancia de Redis por medio de `redis-cli -h 0.0.0.0 -p 6379`. Ya dentro prueba a jugar con algunos comandos como `KEYS *` y luego `GET algun-hash-key` utilizando alguno de los hash values que salieron en el primer comando como parámetro, en vez de `algun-hash-key`
+   2. O bien, puedes conectarte al contenedor de `Redis` en ejecución con el comando `docker exec -it redis /bin/bash`, y ya dentro del mismo utilizar el comando `redis-cli` para conectarte a la instancia de Redis en ejecución. Intenta los mismos comandos propuestos en la 1er alternativa para verificarlo
 
 ## Recursos
 
-* <https://yaml.org/>
-* <https://docs.docker.com/compose/>
+- <https://redis.io/>
+- <https://hub.docker.com/_/redis>
+- <https://hub.docker.com/_/python>
+- <https://faker.readthedocs.io/en/master/>
+- <https://pypi.org/project/redis/>
