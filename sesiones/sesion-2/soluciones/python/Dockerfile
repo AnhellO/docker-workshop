@@ -8,4 +8,4 @@ COPY populate.py .
 
 RUN pip install pymongo
 
-CMD [ "python", "./populate.py", "&&", "python", "./find.py" ]
+CMD python ./populate.py ; python ./find.py

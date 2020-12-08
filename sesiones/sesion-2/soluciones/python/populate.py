@@ -1,6 +1,6 @@
 import pymongo
 
-client = pymongo.MongoClient("mongodb://m1:27017/")
+client = pymongo.MongoClient("mongodb://db:27017/")
 db = client["mi-db"]
 
 # Name

@@ -24,7 +24,7 @@ type Pet struct {
 var collection *mongo.Collection
 
 func init() {
-	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb://m1:27017/"))
+	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb://db:27017/"))
 	if err != nil {
 		panic(err)
 	}
