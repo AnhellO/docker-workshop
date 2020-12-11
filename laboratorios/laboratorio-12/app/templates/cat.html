@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>El gatito {{ nombre }}!</title>
+        <style>
+            body {
+                background: black;
+                color: white;
+            }
+            div.container {
+                max-width: 500px;
+                margin: 100px auto;
+                padding: 10px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>El es el gatito #{{ id }}: {{ nombre }}!!!</h1>
+            <img src="{{ imagen }}" alt="Gatito {{ nombre }}" >
+        </div>
+    </body>
+</html>

@@ -1,0 +1,5 @@
+Flask==1.1.1
+requests==2.22.0
+peewee==3.14
+Faker==4.17.0
+psycopg2==2.8.6
