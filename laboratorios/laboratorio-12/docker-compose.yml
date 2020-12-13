@@ -1,0 +1,74 @@
+version: "3.8"
+services:
+  app:
+    build: ./app
+    restart: on-failure:5
+    container_name: pyapp
+    expose:
+      - "5000"
+    ports:
+      - "5000:5000"
+    networks:
+      - custom
+    volumes:
+      - type: bind
+        source: ./app
+        target: /usr/src/app
+    depends_on:
+      - db
+    environment:
+      - FLASK_APP=app.py
+    env_file:
+      - ./app/env.list
+  scraper:
+    build: ./app
+    restart: on-failure:5
+    container_name: pyscrape
+    networks:
+      - custom
+    volumes:
+      - type: bind
+        source: ./app
+        target: /usr/src/app
+    depends_on:
+      - db
+    env_file:
+      - ./app/env.list
+    command: python ./scraper.py
+  db:
+    image: postgres:12.2
+    restart: on-failure:5
+    container_name: postgreDB
+    ports:
+      - "5432:5432"
+    networks:
+      - custom
+    environment:
+      POSTGRES_DB: "random_cats"
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "secret123"
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/:ro
+      - db-data:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: on-failure:5
+    container_name: postgreAdmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "example@test.com"
+      PGADMIN_DEFAULT_PASSWORD: "othersecret123"
+      PGADMIN_LISTEN_PORT: "80"
+    ports:
+      - "8080:80"
+    networks:
+      - custom
+    depends_on:
+      - db
+
+volumes:
+  db-data:
+  pgadmin-data:
+
+networks:
+  custom:
+    driver: bridge

@@ -1,0 +1,81 @@
+<mxfile modified="2020-11-13T03:01:27.246Z" host="app.diagrams.net" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" etag="DNLhVPMcImu3_6QfVk1i" version="13.9.7" type="github">
+  <diagram id="Ht1M8jgEwFfnCIfOTk4-" name="Page-1">
+    <mxGraphModel dx="1580" dy="849" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="UEzPUAAOIrF-is8g5C7q-128" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=open;startFill=0;endArrow=open;endFill=0;strokeWidth=2;strokeColor=#808080;" parent="1" source="UEzPUAAOIrF-is8g5C7q-109" target="UEzPUAAOIrF-is8g5C7q-114" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="310.5" y="461.5" />
+              <mxPoint x="310.5" y="376.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UEzPUAAOIrF-is8g5C7q-141" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=open;startFill=0;endArrow=open;endFill=0;strokeWidth=2;strokeColor=#808080;" parent="1" target="fDf_TFktBWkrHczZA2oo-6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="529.5000000000005" y="289.5" as="sourcePoint" />
+            <mxPoint x="630" y="352" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="529.5" y="351.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UEzPUAAOIrF-is8g5C7q-109" value="&lt;font style=&quot;font-size: 20px&quot;&gt;Cliente&lt;/font&gt;" style="outlineConnect=0;gradientColor=none;fontColor=#545B64;strokeColor=none;fillColor=#879196;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.illustration_desktop;pointerEvents=1;labelBackgroundColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="160.5" y="415.5" width="100" height="91" as="geometry" />
+        </mxCell>
+        <mxCell id="UEzPUAAOIrF-is8g5C7q-114" value="&lt;font style=&quot;font-size: 20px&quot;&gt;Flask App&lt;br&gt;Container&lt;br&gt;&lt;/font&gt;" style="outlineConnect=0;fontColor=#232F3E;gradientColor=#945DF2;gradientDirection=north;fillColor=#5A30B5;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.api_gateway;labelBackgroundColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="369.5" y="337.5" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="fDf_TFktBWkrHczZA2oo-5" value="Scraper Container" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/oxygen/64x64/mimetypes/text-x-python.png;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="490" y="180" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="fDf_TFktBWkrHczZA2oo-6" value="DB Container" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#3334B9;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=20;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.rds_postgresql_instance;" vertex="1" parent="1">
+          <mxGeometry x="610" y="313" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="fDf_TFktBWkrHczZA2oo-7" value="" style="endArrow=classic;html=1;fontSize=20;strokeWidth=2;rounded=0;strokeColor=#808080;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="UEzPUAAOIrF-is8g5C7q-114" target="fDf_TFktBWkrHczZA2oo-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="337.5" as="sourcePoint" />
+            <mxPoint x="420" y="239" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="410" y="239" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fDf_TFktBWkrHczZA2oo-8" value="PgAdmin Container" style="pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#515151;shape=mxgraph.mscae.system_center.admin_console;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="610" y="480" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="fDf_TFktBWkrHczZA2oo-9" value="" style="endArrow=classic;html=1;fontSize=20;rounded=0;strokeColor=#808080;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="640.0000000000002" y="640" as="sourcePoint" />
+            <mxPoint x="640" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fDf_TFktBWkrHczZA2oo-10" value="" style="endArrow=classic;html=1;fontSize=20;rounded=0;strokeColor=#808080;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="447.5000000000002" y="391" as="sourcePoint" />
+            <mxPoint x="600" y="391" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fDf_TFktBWkrHczZA2oo-11" value="&lt;font style=&quot;font-size: 20px&quot;&gt;Devs &amp;amp; Devops&lt;br&gt;&lt;/font&gt;" style="outlineConnect=0;gradientColor=none;fontColor=#545B64;strokeColor=none;fillColor=#879196;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.illustration_desktop;pointerEvents=1;labelBackgroundColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="588" y="640" width="100" height="91" as="geometry" />
+        </mxCell>
+        <mxCell id="fDf_TFktBWkrHczZA2oo-15" value="" style="endArrow=classic;html=1;fontSize=20;rounded=0;strokeColor=#808080;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="640.0000000000002" y="480" as="sourcePoint" />
+            <mxPoint x="640" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fDf_TFktBWkrHczZA2oo-17" value="" style="endArrow=classic;html=1;fontSize=20;rounded=0;strokeColor=#808080;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="fDf_TFktBWkrHczZA2oo-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="750" y="550" as="sourcePoint" />
+            <mxPoint x="720" y="219" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fDf_TFktBWkrHczZA2oo-18" value="" style="html=1;dashed=0;whitespace=wrap;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon;prIcon=api;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="720" y="180" width="78" height="78" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
