@@ -2,7 +2,8 @@
 
 ## Ejercicios
 
-Si el ejemplo solamente necesita comandos escritos entonces agregalos en un archivo .md que anexes por separado dentro de tu carpeta con las soluciones al examen.
+- Si el ejemplo solamente necesita comandos escritos entonces agregalos en un archivo `.md` que anexes por separado dentro de tu carpeta con las soluciones al examen
+- En caso de que el ejercicio necesite algún otro archivo, asegúrate de adjuntarlo junt a tu solución
 
 ### Ejercicio 1
 
