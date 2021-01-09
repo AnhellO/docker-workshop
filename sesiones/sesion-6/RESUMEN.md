@@ -1,0 +1,24 @@
+# Resumen - 6ta Sesión
+
+- Comenzamos a ver [`Docker Compose`](https://docs.docker.com/compose/)
+- Instalación del binario de `docker-compose`
+- Revisamos la estructura del archivo `.yml`
+- Revisamos los siguientes comandos:
+  - `docker-compose up`: Iniciar servicios/contenedores
+    - `-d`: Modo dettached
+    - `--build`: Construye imágenes
+  - `docker-compose down`: Detiene y borra los servicios/contenedores en ejecución
+    - `-v`: Remueve los vólumenes creados
+    - `--rmi all`: Borra todas las imágenes construidas y/o descargadas desde el archivo `.yml`
+- Trabajamos con los laboratorios 9 y 10
+  - Creamos versión `CRUD` de `GO` para el laboratorio 10
+    - Aprendimos y utilizamos `GORM`
+      - <https://gorm.io/index.html>
+      - <https://gorm.io/docs/connecting_to_the_database.html>
+      - <https://gorm.io/docs/models.html>
+      - <https://gorm.io/docs/create.html>
+      - <https://gorm.io/docs/query.html>
+      - <https://gorm.io/docs/update.html>
+      - <https://gorm.io/docs/delete.html>
+    - Aprendimos y utilizamos `Gofakeit`
+      - <https://github.com/brianvoe/gofakeit>
