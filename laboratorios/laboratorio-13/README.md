@@ -1,16 +1,16 @@
 # Guía
 
-Esta guía muestra un ejemplo de `Python` interactuando con un message broker de `RabbitMQ` de tal manera que se puedan enviar y recibir mensajes del mismo.
+Esta guía muestra un ejemplo básico de como interactuar con un message broker de `RabbitMQ` de tal manera que se puedan enviar y recibir mensajes del mismo. El ejemplo está codificado tanto para `Python` como para `GO`.
 
-Hay dos scripts de `Python`, uno funge como _productor_ ([`send.py`](app/send.py)) y otro como _consumidor_ ([`receive.py`](app/receive.py)).
+En ambos casos existen dos archivos diferentes, uno funge como el _productor_ ([`send.py`](python/app/send.py) para `Python` y [`send.go`](go/app/send.go) para `GO`), y otro como el _consumidor_ ([`receive.py`](python/app/receive.py) para `Python` y [`receive.go`](go/app/receive.go) para `GO`).
 
 El ejemplo parte del **1er tutorial** de la [guía oficial de `RabbitMQ`](https://www.rabbitmq.com/tutorials/tutorial-one-python.html), pero en este caso Dockeriza el ejemplo para que nada tenga que ser instalado ni ejecutado localmente (con excepción de `Docker` claro está), y hace algunas cuantas modificaciones menores para poder ser capaces de utilizar el dashboard de `RabbitMQ` a través de la URL <http://localhost:15672/>.
 
-Para ejecutarlo, basta con utilizar el comando `docker-compose up -d --build`.
+Para ejecutarlo, basta con utilizar el comando `docker-compose up -d --build` en la versión en la que quieras revisarlo (`Python` o `GO`).
 
-El contenedor de `pyconsumer` estará siempre en ejecución, en cambio el de `pyproducer` terminará después de cierto tiempo. Podemos volver a ejecutarlo por medio de los comandos `docker restart pyproducer` o `docker start pyproducer`, una vez que este se encuentre en estatus de `stop`.
+El respectivo contenedor de `consumer` estará siempre en ejecución, en cambio el de `producer` terminará después de cierto tiempo de ejecución. Podemos volver a ejecutarlo por medio de los comandos `docker restart producer` o `docker start producer` una vez que este se encuentre en estatus de `stop`, si es que deseamos que se vuelvan a enviar mensajes.
 
-Podemos jugar un poco con este ejemplo y hacer cambios a los scripts de `Python` directamente sin tener que reiniciar todo el stack de compose, ya que se utilizan bind-mount volumes para agilizar este proceso.
+Podemos jugar un poco con este ejemplo y hacer cambios a los respectivos scripts directamente sin tener que reiniciar todo el stack de compose, ya que se utilizan [_bind-mount volumes_](https://docs.docker.com/storage/bind-mounts/) para agilizar este proceso.
 
 Una vez que hayamos terminado con las pruebas necesarias podemos proceder a detener todo el stack con el comando `docker-compose down`.
 

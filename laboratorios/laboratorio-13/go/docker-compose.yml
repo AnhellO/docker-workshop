@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  producer:
+    build: .
+    restart: on-failure:10
+    container_name: goproducer
+    volumes:
+      - type: bind
+        source: ./app
+        target: /usr/src/app
+    depends_on:
+      - rabbitmq
+    command: go run ./send/main.go
+  consumer:
+    build: .
+    restart: on-failure:10
+    container_name: goconsumer
+    volumes:
+      - type: bind
+        source: ./app
+        target: /usr/src/app
+    depends_on:
+      - rabbitmq
+    command: go run ./receive/main.go
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbit
+    hostname: my-rabbit
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+      - RABBITMQ_DEFAULT_USER=therabbit
+      - RABBITMQ_DEFAULT_PASS=secret123
+  
