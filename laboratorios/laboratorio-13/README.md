@@ -2,7 +2,7 @@
 
 Esta guía muestra un ejemplo básico de como interactuar con un message broker de `RabbitMQ` de tal manera que se puedan enviar y recibir mensajes del mismo. El ejemplo está codificado tanto para `Python` como para `GO`.
 
-En ambos casos existen dos archivos diferentes, uno funge como el _productor_ ([`send.py`](python/app/send.py) para `Python` y [`send.go`](go/app/send.go) para `GO`), y otro como el _consumidor_ ([`receive.py`](python/app/receive.py) para `Python` y [`receive.go`](go/app/receive.go) para `GO`).
+En ambos casos existen dos archivos diferentes, uno funge como el _productor_ ([`send.py`](python/app/send.py) para `Python` y [`send/main.go`](go/app/send/main.go) para `GO`), y otro como el _consumidor_ ([`receive.py`](python/app/receive.py) para `Python` y [`receive/main.go`](go/app/receive/main.go) para `GO`).
 
 El ejemplo parte del **1er tutorial** de la [guía oficial de `RabbitMQ`](https://www.rabbitmq.com/tutorials/tutorial-one-python.html), pero en este caso Dockeriza el ejemplo para que nada tenga que ser instalado ni ejecutado localmente (con excepción de `Docker` claro está), y hace algunas cuantas modificaciones menores para poder ser capaces de utilizar el dashboard de `RabbitMQ` a través de la URL <http://localhost:15672/>.
 
