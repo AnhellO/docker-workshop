@@ -16,10 +16,10 @@ Esta guía muestra un ejemplo de un contenedor con `PostgreSQL`, el cual podremo
 
 ## Recursos
 
-* <https://docs.docker.com/compose/>
-* <https://www.postgresql.org/>
-* <https://hub.docker.com/_/postgres>
-* <https://www.pgadmin.org/>
-* <https://hub.docker.com/r/dpage/pgadmin4/>
-* [Curso de PGAdmin 4 | Tutorial Gratis en Español desde Cero | Parte #1](https://www.youtube.com/watch?v=6q9BXkzAeOM)
-* [Curso de PGAdmin 4 | Tutorial Gratis en Español desde Cero | Parte #2](https://www.youtube.com/watch?v=18RWX9qRBPU)
+- <https://docs.docker.com/compose/>
+- <https://www.postgresql.org/>
+- <https://hub.docker.com/_/postgres>
+- <https://www.pgadmin.org/>
+- <https://hub.docker.com/r/dpage/pgadmin4/>
+- [Curso de PGAdmin 4 | Tutorial Gratis en Español desde Cero | Parte #1](https://www.youtube.com/watch?v=6q9BXkzAeOM)
+- [Curso de PGAdmin 4 | Tutorial Gratis en Español desde Cero | Parte #2](https://www.youtube.com/watch?v=18RWX9qRBPU)

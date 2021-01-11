@@ -20,10 +20,10 @@ Al igual que el `ejemplo-9`, la app utiliza el `ORM` `Peewee` para conectarse a 
 
 ## Recursos
 
-* <https://docs.docker.com/compose/>
-* <https://www.postgresql.org/>
-* <https://hub.docker.com/_/postgres>
-* <http://docs.peewee-orm.com/en/latest/>
-* <https://flask.palletsprojects.com/en/1.1.x/>
-* <https://developer.mozilla.org/es/docs/Web/HTTP/Methods/GET>
-* <https://developer.mozilla.org/es/docs/Web/HTTP/Methods/POST>
+- <https://docs.docker.com/compose/>
+- <https://www.postgresql.org/>
+- <https://hub.docker.com/_/postgres>
+- <http://docs.peewee-orm.com/en/latest/>
+- <https://flask.palletsprojects.com/en/1.1.x/>
+- <https://developer.mozilla.org/es/docs/Web/HTTP/Methods/GET>
+- <https://developer.mozilla.org/es/docs/Web/HTTP/Methods/POST>
