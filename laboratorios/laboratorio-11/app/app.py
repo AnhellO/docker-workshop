@@ -1,8 +1,12 @@
 from datetime import datetime
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from models import Question
 
 app = Flask(__name__)
+
+@app.route('/', methods=['GET'])
+def home():
+    return render_template('home.html')
 
 @app.route('/polls/questions/', methods=['GET', 'POST'])
 def questions():
