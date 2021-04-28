@@ -24,8 +24,6 @@ services:
     - "8080:80"
     volumes:
     - pgadmin-data:/var/lib/pgadmin
-    links:
-    - db:pgsql-server
 
 volumes:
   db-data:
