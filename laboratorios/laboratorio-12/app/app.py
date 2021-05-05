@@ -18,15 +18,15 @@ def cats():
     if request.method == 'POST':
         cat = MyCats(nombre=request.form['nombre'], imagen=request.form['imagen'])
         cat.save()
-        return {'ID': cat.id, 'nombre': cat.nombre, 'imagen': cat.imagen}
+        return {'ID': cat.id, 'nombre': cat.nombre, 'apellido': cat.apellido, 'imagen': cat.imagen}
 
-    return jsonify([{'ID': cat.id, 'nombre': cat.nombre, 'imagen': cat.imagen} for cat in MyCats.select()])
+    return jsonify([{'ID': cat.id, 'nombre': cat.nombre, 'apellido': cat.apellido, 'imagen': cat.imagen} for cat in MyCats.select()])
 
 @app.route('/my-cats/<cat_id>')
 def kitten(cat_id):
     try:
         cat = MyCats.get(MyCats.id == cat_id)
-        return render_template('cat.html', id=cat.id, nombre=cat.nombre, imagen=cat.imagen)
+        return render_template('cat.html', id=cat.id, nombre=cat.nombre, apellido=cat.apellido, imagen=cat.imagen)
         # Use this in case you want to serve as JSON
         # return {'ID': cat.id, 'nombre': cat.nombre, 'imagen': cat.imagen}
     except DoesNotExist:

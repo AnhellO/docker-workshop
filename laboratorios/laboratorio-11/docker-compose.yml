@@ -1,5 +1,11 @@
 version: "3.8"
 services:
+  # Tendríamos que escribir todos estos comandos si utilizaramos el docker-cli :O
+  # docker volume create db-data
+  # docker network create custom
+  # docker run --name pollsdb -p 5432:5432 -v db-data:/var/lib/postgresql/data
+  #   -e POSTGRES_DB=peewee_polls -e POSTGRES_USER=aj -e POSTGRES_PASSWORD=ajsecret123 -e PGDATA=/var/lib/postgresql/data
+  #   --network custom --restart "unless-stopped" postgres:12.2
   db:
     container_name: pollsdb
     image: postgres:12.2
@@ -15,6 +21,11 @@ services:
       - POSTGRES_USER=aj
       - POSTGRES_PASSWORD=ajsecret123
       - PGDATA=/var/lib/postgresql/data
+  # ...Y también este otro par de comandos :C
+  # docker build -t pyapp ./app
+  # docker run --name pyapp --restart "unless-stopped" -p 5000:5000
+  #   --mount type=bind,source=./app,target=/usr/src/app --network custom
+  #   --env-file ./app/env.list pyapp
   app:
     container_name: pyapp
     build: ./app
