@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  db:
+    container_name: mongo_db
+    image: mongo:4.4
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+  app:
+    container_name: pyapp
+    build: .
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - type: bind
+        source: ./app.py
+        target: /usr/src/app/app.py
+    depends_on:
+      - db
